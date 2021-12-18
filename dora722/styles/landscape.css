@@ -1,0 +1,69 @@
+@media screen and (orientation: landscape) {
+
+    /* настройка хедера */
+    header p{
+        font-size: 40px;
+    }
+
+    header img{
+        width: 80px;
+
+        display: none;
+    }
+
+    /* 3 КОЛОНКИ(min-width: 1920px): содержимое дальше 1920px не рассягивается */
+    @media screen and (orientation: landscape) and (min-width: 1920px) and (max-width: 100vw){   
+
+        /* отображение блоков с камерами и их текстом */
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(406px, 620px));
+            grid-gap: 30px;
+        
+            max-width: 1920px;
+        }  
+    }
+
+    /* 1 КОЛОНКА: этим будут пользоваться либо старики, либо люди с плохим зрением(да-да, они(ЛИБО ТОЛЬКО ТЫ!!!)) */
+    @media screen and (orientation: landscape) and (min-width: 200px) and (max-width: 720px){
+    
+        /* отображение блоков с камерами и их текстом */
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(1, minmax(200px, 720px));
+            grid-gap: 30px;
+        
+            max-width: 1920px;
+        }  
+    }
+
+    /* 2 КОЛОНКИ: для ширины от 720px до 1320px(почему я взял это разрешение? - я не знаю<3)  */
+    @media screen and (orientation: landscape) and (min-width: 720px) and (max-width: 1320px){
+
+        /* отображение блоков с камерами и их текстом */
+        
+        .container{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(345px, 625px));
+            grid-gap: 30px;
+        
+            max-width: 1920px;
+        } 
+    }
+
+    /* 3 КОЛОНКИ: для ширины от 1280px до 1920px */
+    @media screen and (orientation: landscape) and (min-width: 1280px) and (max-width: 1920px){
+
+        /* отображение блоков с камерами и их текстом */
+        
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(406px, 620px));
+            grid-gap: 30px;
+        
+            max-width: 1920px;
+        }
+    }   
+}    

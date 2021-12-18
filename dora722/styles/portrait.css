@@ -1,0 +1,51 @@
+/* пока с мобилками все ок,
+но нужна формула для адаптации шрифтов для разной ширины экрана */
+
+@media screen and (orientation: portrait) {
+
+    /* настройка хедера */
+    header p{
+        font-size: 40px;
+    }
+
+    header img{
+        width: 60px;
+        margin: 0px 10px;
+    }
+
+    /* 1 КОЛОНКА: минимальное разрешение для мобилок: от 200px до 430px */
+    @media screen and (orientation: portrait) and (min-width: 200px) and (max-width: 430px){
+
+        /* отображение блоков с камерами и их текстом */
+        
+        .container{
+            display: grid;
+            grid-template-columns: repeat(1, minmax(200px, 430px));
+            grid-gap: 30px;
+        } 
+    }
+
+    /* 2 КОЛОНКИ: среднее разрешение для мобилок: от 430px */
+    @media screen and (orientation: portrait) and (min-width: 430px) and (max-width: 100vw){
+
+        /* отображение блоков с камерами и их текстом */
+        
+        .container{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(200px, 2000px));
+            grid-gap: 30px;
+        } 
+    }
+
+    /* 3 КОЛОНКИ: если ширина мобилки больше 650px, то берет максимальную ширину рассматриваемого окна
+    @media screen and (orientation: portrait) and (min-width: 650px) and (max-width: 100vw){
+
+         отображение блоков с камерами и их текстом 
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(195px, 1fr));
+            grid-gap: 30px;
+        } 
+    }  */
+}

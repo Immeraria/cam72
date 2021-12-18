@@ -1,0 +1,138 @@
+/* @import src(styles/); */
+
+
+/* дорогой я из будущего, если тебе нужно будет что-то изменить некоторые компоненты, 
+то изменять ты их будешь здесь, а не в других медиа-запросах,
+тк придется пользоваться каждое изменение компонента прописывать во ВСЕ МЕДИА-ЗАПРОСЫ!!!
+ТЫ СЛИШКОМ ПОЗДНО ОСОЗНАЛ ЭТО  (｡╯︵╰｡) */
+
+/* сегодня я узнал, что нельзя делать всю css верстку через медиа-запросы,
+тк базовые значения слетаю и тебе придется везде пихать эти значения */
+
+/* спустя 10 минут я придумал схему, где можно построить css верстку чисто из медиа-запросов */
+
+
+
+/* стили отображаемой страницы */
+
+
+html{
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+}
+
+body{
+    margin: 0;
+}
+
+/* шапка для пк */
+
+header{ 
+    display: flex;
+    align-items: center;
+    
+    background-color: #3AAFA9 ;     
+
+    height: 100px;   
+    margin-bottom: 30px;
+
+}
+
+header img{
+    width: 80px;
+
+    cursor: pointer;
+}
+
+header p{
+    cursor: pointer;
+}
+
+/* скирн камеры с ее местоположением */
+
+.element{
+    display: flex;
+    flex-direction: column;
+
+    cursor: pointer;
+
+    background-color:#3AAFA9 ;
+
+    opacity: 0.9;
+}
+.element:hover{
+    opacity: 1;
+}
+
+.element p{
+    color: rgb(0, 0, 0);
+
+    font-size: 26px;
+    margin: 18px 0;
+    padding-left: 24px;
+}
+
+
+
+
+/* стили модального окна */
+
+/* родитель модального окна: скрыт */
+.modal-fade{
+    display: none;
+}
+
+/* это затемнение модального окна */
+.modal-fade:before {
+	position: absolute; 
+	left: 0;
+	top: 0;
+
+	width: 100%; 
+	height: 100%;
+
+    content: '';
+	background: rgb(0, 0, 0);
+
+	opacity: 0.7;
+
+	z-index: 9;
+}
+
+/* модальное окно с вторым уровнем z-index - модальное окно приоритетней дивчика с затемнением */
+.modal {
+	position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 20%;
+    bottom: 20%;
+    
+	background: #fff;
+
+	opacity: 1;
+    
+    z-index: 99;
+}
+
+.modal iframe{
+    width: 100%;
+    height: 100%;
+}
+
+/* кнопочка закрыть - 3 уровень z-index, те он поверх всегоаоао */
+.modal-close {
+	position: absolute;
+	top: -25px;
+	right: -25px;
+    opacity: 0.75;
+
+    width: 50px;
+    height: 50px;
+
+    z-index: 999;
+}
+.modal-close:hover{
+    opacity: 1;
+}
